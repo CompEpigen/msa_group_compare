@@ -31,8 +31,7 @@ if (color_by_group){
         geom_tiplab(aes(color=group)) +
         theme_tree2() +
         xlab("distance")
-} 
-else {
+} else {
     nj_tree$tip.label <- groups
 
     nj_tree_plot <- ggtree(nj_tree) +
