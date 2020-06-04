@@ -15,14 +15,14 @@ baseCommand:
   - /src/generate_tree_and_visualize.R
 arguments:
   - valueFrom: |
-    ${
-      if ( inputs.color_by_group ){
-        return("TRUE")
+      ${
+        if ( inputs.color_by_group ){
+          return("TRUE")
+        }
+        else {
+          return("FALSE")
+        }
       }
-      else {
-        return("FALSE")
-      }
-    }
     position: 11
 
 inputs:

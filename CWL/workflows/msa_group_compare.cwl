@@ -1,5 +1,12 @@
 cwlVersion: v1.0
 class: Workflow
+doc: |
+  This workflow compares two groups of sequences by running two steps: \n
+    1. a MSA aligment to calculate a distance matrix \n
+    2. generate and plot a phylogenetic tree annotated by group labels \n
+  \n
+  For more information please see: \n
+
 
 inputs:
   fasta_1:
@@ -48,6 +55,9 @@ steps:
         fasta_2: fasta_2
         group_name_1: group_name_1
         group_name_2: group_name_2
+        msa_method: msa_method
+        seq_type: seq_type
+        distance_method: distance_method
       out:
         - dist_tsv
         - dist_rds
@@ -58,6 +68,7 @@ steps:
     in:
       dist_rds:
         source: calc_msa_and_dist_mat/dist_rds
+      color_by_group: color_by_group
     out:
       - tree_plot
 
