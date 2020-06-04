@@ -1,13 +1,6 @@
 cwlVersion: v1.0
 class: Workflow
 
-requirements:
-  SubworkflowFeatureRequirement: {}
-  ScatterFeatureRequirement: {}
-  StepInputExpressionRequirement: {}
-  InlineJavascriptRequirement: {}
-  MultipleInputFeatureRequirement: {}
-
 inputs:
   fasta_1:
     type: File

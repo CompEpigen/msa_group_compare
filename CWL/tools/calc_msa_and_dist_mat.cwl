@@ -1,8 +1,6 @@
 cwlVersion: v1.0
 class: CommandLineTool
-requirements:
-  InlineJavascriptRequirement: {}
-  StepInputExpressionRequirement: {}
+
 hints:
   ResourceRequirement:
     coresMin: 1
