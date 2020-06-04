@@ -33,4 +33,4 @@ dist_mat <- as.matrix(dist_)
 
 ## write out:
 dist_ %>% saveRDS("dist.RDS")
-dist_mat %>% write.table("dist.tsv")
+dist_mat %>% write.table("distance_matrix.tsv")
