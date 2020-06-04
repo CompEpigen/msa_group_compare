@@ -1,0 +1,4 @@
+fasta_1: {class: File, path: ./data/china_2019_covid_surf_prot_seq.fasta}
+fasta_2: {class: File, path: ./data/germany_2020_covid_surf_prot_seq.fasta}
+group_name_1: "china_2019"
+group_name_2: "germany_2020"
