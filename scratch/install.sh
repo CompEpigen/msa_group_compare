@@ -1,0 +1,1 @@
+conda -c conda-forge -c bioconda install bioconductor-msa r-tidyverse r-ape bioconductor-ggtree  bioconductor-biostrings r-seqinr
