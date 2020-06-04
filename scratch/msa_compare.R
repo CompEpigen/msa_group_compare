@@ -81,8 +81,9 @@ nj_tree$tip.label <- seq_ids
 group_info <- split(seq_ids, groups)
 nj_tree_grouped <- groupOTU(nj_tree, group_info)
 
-nj_tree_plot <- ggtree(nj_tree_grouped, aes(color=group)) +
+nj_tree_plot <- ggtree(nj_tree_grouped, aes(color=group), size=1) +
     geom_tiplab(aes(color=group)) +
+    geom_tippoint(aes(color=group), shape=16, size=2) +
     theme_tree2() +
     xlab("distance")
 
