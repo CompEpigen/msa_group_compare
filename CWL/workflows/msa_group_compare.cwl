@@ -49,7 +49,7 @@ inputs:
     default: "protein"
     doc: |
       The type of sequence. One of "protein", "dna", or "rna".
-  distance_method:
+  homology_method:
     type: 
       type: enum
       symbols:
@@ -58,7 +58,7 @@ inputs:
     default: "identity"
     doc: |
       Which distance measure to use. Either "similarity" or "identity".
-  color_by_group:
+  tree_color_by_group:
     type: boolean
     default: True
     doc: |
@@ -75,7 +75,7 @@ steps:
         group_name_2: group_name_2
         msa_method: msa_method
         seq_type: seq_type
-        distance_method: distance_method
+        homology_method: homology_method
       out:
         - dist_tsv
         - dist_rds
@@ -86,7 +86,7 @@ steps:
     in:
       dist_rds:
         source: calc_msa_and_dist_mat/dist_rds
-      color_by_group: color_by_group
+      tree_color_by_group: tree_color_by_group
     out:
       - tree_plot
 

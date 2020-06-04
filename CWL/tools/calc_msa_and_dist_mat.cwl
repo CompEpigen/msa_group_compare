@@ -49,7 +49,7 @@ inputs:
         - rna
     inputBinding: 
       position: 15
-  distance_method:
+  homology_method:
     type: 
       type: enum
       symbols:

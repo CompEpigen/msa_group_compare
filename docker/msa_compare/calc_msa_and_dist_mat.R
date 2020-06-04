@@ -13,7 +13,7 @@ label1 <- args[3]
 label2 <- args[4]
 msa_method <- args[5] # one of "ClustalW", "ClustalOmega", "Muscle"
 seq_type <- args[6] # protein, dna, rna
-distance_method <- args[7] # "identity" or "similarity"
+homology_method <- args[7] # "identity" or "similarity"
 
 seq_set_1 <- readAAStringSet(fasta1, format="fasta")
 seq_set_2 <- readAAStringSet(fasta2, format="fasta")
@@ -27,7 +27,7 @@ combined_msa <- msa(combined_seq_set, type=seq_type, method="ClustalW")
 
 combined_msa_aln <- msaConvert(combined_msa, type="seqinr::alignment")
 
-dist_ <- dist.alignment(combined_msa_aln, distance_method)
+dist_ <- dist.alignment(combined_msa_aln, homology_method)
 
 dist_mat <- as.matrix(dist_)
 

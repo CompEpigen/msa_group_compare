@@ -19,7 +19,7 @@ baseCommand:
 arguments:
   - valueFrom: |
       ${
-        if ( inputs.color_by_group ){
+        if ( inputs.tree_color_by_group ){
           return("TRUE")
         }
         else {
@@ -33,7 +33,7 @@ inputs:
     type: File
     inputBinding:
       position: 10
-  color_by_group:
+  tree_color_by_group:
     type: boolean
 
 outputs:

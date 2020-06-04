@@ -8,7 +8,7 @@ library(ggtree)
 args <- commandArgs(trailingOnly = TRUE)
 
 dist_path <- args[1]
-color_by_group <- as.logical(args[2]) # "TRUE" or "FALSE"
+tree_color_by_group <- as.logical(args[2]) # "TRUE" or "FALSE"
 
 dist_ <- readRDS(dist_path)
 
@@ -22,7 +22,7 @@ groups <- sapply(nj_tree$tip.label, function(n) {
         return(strsplit(n, ':')[[1]][1])
 })
 
-if (color_by_group){
+if (tree_color_by_group){
     nj_tree$tip.label <- seq_ids
     group_info <- split(seq_ids, groups)
     nj_tree_grouped <- groupOTU(nj_tree, group_info)

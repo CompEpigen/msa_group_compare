@@ -37,7 +37,7 @@ label1 <- "china_2019"
 label2 <- "germany_2020"
 msa_method <- "ClustalW" # one of "ClustalW", "ClustalOmega", "Muscle"
 seq_type <- "protein" # protein, dna, rna
-distance_method <- "identity" # "identity" or "similarity"
+homology_method <- "identity" # "identity" or "similarity"
 
 seq_set_1 <- readAAStringSet(fasta1, format="fasta")
 seq_set_2 <- readAAStringSet(fasta2, format="fasta")
@@ -53,7 +53,7 @@ system.time(
 
 combined_msa_aln <- msaConvert(combined_msa, type="seqinr::alignment")
 
-dist_ <- dist.alignment(combined_msa_aln, distance_method)
+dist_ <- dist.alignment(combined_msa_aln, homology_method)
 
 dist_mat <- as.matrix(dist_)
 
