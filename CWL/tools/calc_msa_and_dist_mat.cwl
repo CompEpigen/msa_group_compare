@@ -7,7 +7,7 @@ hints:
     ramMin: 1000
     tmpdirMin: 400
   DockerRequirement:
-    dockerPull: kerstenbreuer/msa_group_compare:1
+    dockerPull: kerstenbreuer/msa_group_compare:2
   
 baseCommand:
   - Rscript 
@@ -31,6 +31,32 @@ inputs:
     type: string
     inputBinding: 
       position: 13
+  msa_method:
+    type: 
+      type: enum
+      symbols:
+        - ClustalW
+        - ClustalOmega
+        - Muscle
+    inputBinding: 
+      position: 14
+  seq_type:
+    type: 
+      type: enum
+      symbols:
+        - protein
+        - dna
+        - rna
+    inputBinding: 
+      position: 15
+  distance_method:
+    type: 
+      type: enum
+      symbols:
+        - identity
+        - similarity
+    inputBinding: 
+      position: 16
 
 outputs:
   dist_tsv:

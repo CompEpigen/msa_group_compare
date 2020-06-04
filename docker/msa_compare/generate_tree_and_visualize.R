@@ -8,10 +8,12 @@ library(ggtree)
 args <- commandArgs(trailingOnly = TRUE)
 
 dist_path <- args[1]
+color_by_group <- as.logical(args[2]) # "TRUE" or "FALSE"
 
 dist_ <- readRDS(dist_path)
 
 nj_tree <- nj(dist_)
+
 
 seq_ids <- sapply(nj_tree$tip.label, function(n) {
         return(strsplit(n, ':')[[1]][2])
@@ -19,14 +21,24 @@ seq_ids <- sapply(nj_tree$tip.label, function(n) {
 groups <- sapply(nj_tree$tip.label, function(n) {
         return(strsplit(n, ':')[[1]][1])
 })
-nj_tree$tip.label <- seq_ids
-group_info <- split(seq_ids, groups)
-nj_tree_grouped <- groupOTU(nj_tree, group_info)
 
-nj_tree_plot <- ggtree(nj_tree_grouped, aes(color=group)) +
-    geom_tiplab(aes(color=group)) +
-    theme_tree2() +
-    xlab("distance")
+if (color_by_group){
+    nj_tree$tip.label <- seq_ids
+    group_info <- split(seq_ids, groups)
+    nj_tree_grouped <- groupOTU(nj_tree, group_info)
+
+    nj_tree_plot <- ggtree(nj_tree_grouped, aes(color=group)) +
+        geom_tiplab(aes(color=group)) +
+        theme_tree2() +
+        xlab("distance")
+} 
+else {
+    nj_tree$tip.label <- groups
+
+    nj_tree_plot <- ggtree(nj_tree) +
+        theme_tree2() +
+        xlab("distance")
+}
     
 ggsave(
     "phylogenetic_tree.png",

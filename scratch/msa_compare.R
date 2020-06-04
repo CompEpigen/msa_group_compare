@@ -7,7 +7,7 @@ library(ggtree)
 
 fasta1 <- "china_2019_covid_proteomes.fasta"
 fasta2 <- "germany_2020_covid_proteomes.fasta"
-msa_method <- "ClustalW" # one of "ClustalW", "ClustalOmega", "Muscle"
+msa_method <- "Muscle" # one of "ClustalW", "ClustalOmega", "Muscle"
 seq_type <- "protein" # protein, dna, rna
 
 target_protein <- "surface glycoprotein"
@@ -48,7 +48,7 @@ names(seq_set_2) <- paste(rep(label2, length(seq_set_2)), names(seq_set_2), sep=
 combined_seq_set <- c(seq_set_1, seq_set_2)
 
 system.time(
-    combined_msa <- msa(combined_seq_set, type=seq_type, method="ClustalW")
+    combined_msa <- msa(combined_seq_set, type=seq_type, method=msa_method)
 )
 
 combined_msa_aln <- msaConvert(combined_msa, type="seqinr::alignment")

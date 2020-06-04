@@ -12,6 +12,32 @@ inputs:
   group_name_2:
     type: string
     default: "group2"
+  msa_method:
+    type: 
+      type: enum
+      symbols:
+        - ClustalW
+        - ClustalOmega
+        - Muscle
+    default: "ClustalW"
+  seq_type:
+    type: 
+      type: enum
+      symbols:
+        - protein
+        - dna
+        - rna
+    default: "protein"
+  distance_method:
+    type: 
+      type: enum
+      symbols:
+        - identity
+        - similarity
+    default: "identity"
+  color_by_group:
+    type: boolean
+    default: True
  
 steps:
   calc_msa_and_dist_mat:

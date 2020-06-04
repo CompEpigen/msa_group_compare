@@ -11,9 +11,9 @@ fasta1 <- args[1]
 fasta2 <- args[2]
 label1 <- args[3]
 label2 <- args[4]
-msa_method <- "ClustalW" # one of "ClustalW", "ClustalOmega", "Muscle"
-seq_type <- "protein" # protein, dna, rna
-distance_method <- "identity" # "identity" or "similarity"
+msa_method <- args[5] # one of "ClustalW", "ClustalOmega", "Muscle"
+seq_type <- args[6] # protein, dna, rna
+distance_method <- args[7] # "identity" or "similarity"
 
 seq_set_1 <- readAAStringSet(fasta1, format="fasta")
 seq_set_2 <- readAAStringSet(fasta2, format="fasta")
