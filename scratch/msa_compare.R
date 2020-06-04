@@ -85,7 +85,7 @@ nj_tree_plot <- ggtree(nj_tree_grouped, aes(color=group)) +
     geom_tiplab(aes(color=group)) +
     theme_tree2() +
     xlab("distance")
-    
+
 ggsave(
     "phylogenetic_tree.png",
     nj_tree_plot,
