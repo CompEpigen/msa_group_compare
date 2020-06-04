@@ -6,19 +6,27 @@ doc: |
     2. generate and plot a phylogenetic tree annotated by group labels \n
   \n
   For more information please see: \n
-
+  https://w3id.org/cwl/view/git/5227e2c45be641c6675c0a24a8b1f72d712fac40/CWL/workflows/msa_group_compare.cwl
 
 inputs:
   fasta_1:
     type: File
+    doc: |
+      Protein / DNA / RNA sequences of first group in fasta format.
   fasta_2:
     type: File
+    doc: |
+      Protein / DNA / RNA sequences of second group in fasta format.
   group_name_1:
     type: string
     default: "group1"
+    doc: |
+      Name of first group.
   group_name_2:
     type: string
     default: "group2"
+    doc: |
+      Name of second group.
   msa_method:
     type: 
       type: enum
@@ -27,6 +35,10 @@ inputs:
         - ClustalOmega
         - Muscle
     default: "ClustalW"
+    doc: |
+      Which multiple sequence alignment algorithm to use. 
+      One of "ClustalW", "ClustalOmega", or "Muscle". 
+      For more information see: https://www.ebi.ac.uk/Tools/msa/
   seq_type:
     type: 
       type: enum
@@ -35,6 +47,8 @@ inputs:
         - dna
         - rna
     default: "protein"
+    doc: |
+      The type of sequence. One of "protein", "dna", or "rna".
   distance_method:
     type: 
       type: enum
@@ -42,9 +56,13 @@ inputs:
         - identity
         - similarity
     default: "identity"
+    doc: |
+      Which distance measure to use. Either "similarity" or "identity".
   color_by_group:
     type: boolean
     default: True
+    doc: |
+      Whether to color the phylogenetic tree by group.
  
 steps:
   calc_msa_and_dist_mat:
