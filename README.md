@@ -6,4 +6,4 @@ This workflow is mostly intended for demonstation purposes in [CWLab](https://gi
 
 # Workflow Graph and Documentation:
 
-Please refer to https://w3id.org/cwl/view/git/5227e2c45be641c6675c0a24a8b1f72d712fac40/CWL/workflows/msa_group_compare.cwl.
+Please refer to https://w3id.org/cwl/view/git/93d3f03cdd9c44bdc609a11f097a4bad9451be84/CWL/workflows/msa_group_compare.cwl.
