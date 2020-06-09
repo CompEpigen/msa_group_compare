@@ -6,7 +6,7 @@ library(msa)
 library(ggtree)
 
 fasta1 <- "china_2019_covid_proteomes.fasta"
-fasta2 <- "germany_2020_covid_proteomes.fasta"
+fasta2 <- "europe_2020_covid_proteomes.fasta"
 
 target_protein <- "surface glycoprotein"
 
@@ -24,4 +24,4 @@ names(seq_set_2_) <- sapply(names(seq_set_2_), function(n) {
 })
 
 writeXStringSet(seq_set_1_, "china_2019_covid_surf_prot_seq.fasta", format="fasta")
-writeXStringSet(seq_set_2_, "germany_2020_covid_surf_prot_seq.fasta", format="fasta")
+writeXStringSet(seq_set_2_, "europe_2020_covid_surf_prot_seq.fasta", format="fasta")
